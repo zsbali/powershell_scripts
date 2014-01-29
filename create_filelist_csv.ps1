@@ -1,17 +1,15 @@
-$source_dir = "d:"
+$source_dir = "d:\"
 $filelist_path= $source_dir + "\filelist.csv"
 $files_to_include = "*.jpg", "*.jpeg", "*.avi", "*.mkv", "*.mpg", "*.mp[34]"
 $dirs_to_exclude = " " # add one space if there is no path to exclude
 
-try {
-	rm $filelist_path
-} catch [ ItemNotFoundException ] {
-}
+rm $filelist_path -ErrorAction SilentlyContinue
 
 try {
-	"name,length,path" | Out-File -FilePath $filelist_path -Append -Encoding UTF8
+	"name,length,path" | Out-File -FilePath $filelist_path -Append -Encoding UTF8 -ErrorAction Stop
 } catch [ Exception ]
 {
+	Write-Host "Can't write file, exiting."
 	exit
 }
 
