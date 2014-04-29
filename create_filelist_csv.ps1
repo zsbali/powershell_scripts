@@ -1,8 +1,8 @@
 $source_dir = "d:\1temp\tmp3"
 $outfile= $source_dir + "\filelist.csv"
 #[Array] $filepatterns_to_include = "*.jpg", "*.jpeg", "*.avi", "*.mkv", "*.mpg", "*.mp[34]" # pattern only, NO path
-[Array] $filepatterns_to_include = "*.*" 	# pattern only, NO path
-[Array] $filepatterns_to_exclude		# pattern only, NO path
+[Array] $filepatterns_to_include 		# pattern only, NO path
+[Array] $filepatterns_to_exclude	 	# pattern only, NO path
 [Array] $files_to_exclude			# full path IS needed
 
 rm $outfile -ErrorAction SilentlyContinue
