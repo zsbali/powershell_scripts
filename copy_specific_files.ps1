@@ -10,6 +10,6 @@ ls $source_path -r -include $files_to_copy  | ? {
       {
         md -path $new_dir_of_files
       }
-      cp $_ $new_dir_of_files   
+      cp -LiteralPath $_ $new_dir_of_files   
       #mv $_ $new_dir_of_files      
 }
